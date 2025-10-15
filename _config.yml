@@ -1,7 +1,7 @@
-title  : "JIN 的极客宇宙"
+title: "JIN 的极客宇宙"
 description   描述: "记录技术、思考与创作。"
 author   作者: "JIN"
-language   语言: "zh-CN"   “应用”   “应用”
+language   语言: "zh-CN"   “应用”   “应用”   “应用”
 markdown   减价: kramdown   减价:kramdown
 highlighter   萤光笔: rouge   萤光笔:胭脂
 permalink   永久链接: /永久链接:/年/月/:/ /天:标题:year/:month/:day/:title/
