@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ page.title }} - {{ site.title }}</title>
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/home-style.css">
+</head>
+<body class="post-body">
+  <header class="site-header">
+    <div class="container">
+      <div class="logo"><a href="{{ site.baseurl }}/">{{ site.title }}</a></div>
+      <nav>
+        {% for item in site.nav %}
+        <a href="{{ site.baseurl }}{{ item.link }}">{{ item.name }}</a>
+        {% endfor %}
+      </nav>
+    </div>
+  </header>
+
+  <main class="container post-container">
+    <article class="post">
+      <h1 class="post-title">{{ page.title }}</h1>
+      <p class="post-meta">{{ page.date | date: "%Y-%m-%d" }}</p>
+      <div class="post-content">
+        {{ content }}
+      </div>
+      <div class="post-back">
+        <a href="{{ site.baseurl }}/">← 返回首页</a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© {{ site.time | date: "%Y" }} {{ site.author }} · Powered by GitHub Pages & Jekyll</p>
+    </div>
+  </footer>
+</body>
+</html>

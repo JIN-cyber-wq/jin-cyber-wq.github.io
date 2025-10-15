@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ site.title }}</title>
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/home-style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="logo"><a href="{{ site.baseurl }}/">{{ site.title }}</a></div>
+      <nav>
+        {% for item in site.nav %}
+        <a href="{{ site.baseurl }}{{ item.link }}">{{ item.name }}</a>
+        {% endfor %}
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>{{ site.title }}</h1>
+      <p>{{ site.description }}</p>
+      <div class="hero-actions">
+        <a class="btn" href="{{ site.baseurl }}/about">关于我</a>
+        <a class="btn ghost" href="#posts">最近文章</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="posts" class="post-list container">
+    {% for post in site.posts %}
+    <article class="post-card">
+      <a href="{{ site.baseurl }}{{ post.url }}">
+        {% if post.cover %}
+        <div class="thumb" style="background-image: url('{{ site.baseurl }}{{ post.cover }}')"></div>
+        {% endif %}
+        <div class="info">
+          <h2>{{ post.title }}</h2>
+          <p class="meta">{{ post.date | date: "%Y-%m-%d" }}</p>
+          <p class="excerpt">{{ post.excerpt | strip_html | strip_newlines | truncate: 110 }}</p>
+          <span class="more">阅读全文 →</span>
+        </div>
+      </a>
+    </article>
+    {% endfor %}
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© {{ site.time | date: "%Y" }} {{ site.author }} · Powered by GitHub Pages & Jekyll</p>
+    </div>
+  </footer>
+</body>
+</html>
